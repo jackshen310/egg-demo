@@ -10,7 +10,7 @@ module.exports = appInfo => {
    * built-in config
    * @type {Egg.EggAppConfig}
    **/
-  const config = exports = {};
+  const config = (exports = {});
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1565484115302_1213';
@@ -23,8 +23,16 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
+  // 添加 view 配置
+  config.view = {
+    defaultViewEngine: 'nunjucks',
+    mapping: {
+      '.tpl': 'nunjucks'
+    }
+  };
+
   return {
     ...config,
-    ...userConfig,
+    ...userConfig
   };
 };
