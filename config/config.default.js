@@ -16,7 +16,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1565484115302_1213';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['robot'];
 
   // add your user config here
   const userConfig = {
@@ -29,6 +29,11 @@ module.exports = appInfo => {
     mapping: {
       '.tpl': 'nunjucks'
     }
+  };
+
+  // robot's configurations
+  config.robot = {
+    ua: [/Baiduspider/i]
   };
 
   return {
